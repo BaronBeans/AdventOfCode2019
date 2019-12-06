@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "alsatian './**/*.test.ts'",
+    "test": "alsatian \"./**/*.test.ts\"",
     "start": "node bin/index.js"
   },
   "repository": {
