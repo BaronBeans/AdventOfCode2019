@@ -25,5 +25,5 @@ export const getTotalFuelForMassesInclFuelOnFuel = (masses: number[] = listOfMas
     }).reduce((acc, cur) => acc + cur);
 }
 
-console.log(`Part 1: ${getTotalFuelForMasses()}`); //3448043
-console.log(`Part 2: ${getTotalFuelForMassesInclFuelOnFuel()}`); //5169198
+console.log(`Day 1 Part 1: ${getTotalFuelForMasses()}`); //3448043
+console.log(`Day 1 Part 2: ${getTotalFuelForMassesInclFuelOnFuel()}`); //5169198

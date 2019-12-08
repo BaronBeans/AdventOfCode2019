@@ -1,5 +1,5 @@
 import { Test, TestCase, TestFixture, Expect } from "alsatian";
-import { calculateFuelFromMass, getTotalFuelForMasses, getFuelOnFuel, getTotalFuelForMassesInclFuelOnFuel } from "./answer1";
+import { calculateFuelFromMass, getTotalFuelForMasses, getFuelOnFuel, getTotalFuelForMassesInclFuelOnFuel } from "./answer";
 
 @TestFixture("Day 1 Tests")
 export class Day1Tests {
