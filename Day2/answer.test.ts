@@ -1,5 +1,5 @@
 import { Expect, Test, TestCase, TestFixture } from "alsatian";
-import { addCodes, getCodes, interpret, multiplyCodes } from "./answer";
+import { addCodes, getCodes, interpret, multiplyCodes, getFinalValue } from "./answer";
 
 @TestFixture("Day 2 Tests")
 export class Day2Tests {
@@ -28,5 +28,11 @@ export class Day2Tests {
     @TestCase([1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50], [3500, 9, 10, 70, 2, 3, 11, 0, 99, 30, 40, 50])
     public testInterpreter(input: number[], expectedOutput: number[]) {
         Expect(interpret(input)).toEqual(expectedOutput);
+    }
+
+    @Test("Test whether we can get the final value")
+    @TestCase([3500, 9, 10, 70, 2, 3, 11, 0, 99, 30, 40, 50], 3500)
+    public testGetFinal(input: number[], expectedOutput: number) {
+        Expect(getFinalValue(input)).toEqual(expectedOutput);
     }
 }

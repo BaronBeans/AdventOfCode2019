@@ -51,4 +51,6 @@ export const interpret = (input: number[]) => {
     return input;
 }
 
-console.log(`Day 2 Part 1: ${interpret(dataForDay2)}`);
+export const getFinalValue = (input: number[]) => input.length > 0 ? input[0] : undefined;
+
+console.log(`Day 2 Part 1: ${getFinalValue(interpret(dataForDay2))}`);
