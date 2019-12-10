@@ -4,9 +4,11 @@
   "description": "run ```npm install```",
   "main": "index.js",
   "dependencies": {
-    "alsatian": "^3.1.0"
+    "alsatian": "^3.1.0",
+    "inquirer": "^7.0.0"
   },
   "devDependencies": {
+    "@types/inquirer": "^6.5.0",
     "typescript": "^3.7.3"
   },
   "scripts": {

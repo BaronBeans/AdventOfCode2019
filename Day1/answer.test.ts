@@ -10,13 +10,13 @@ export class Day1Tests {
     @TestCase(1969, 654)
     @TestCase(100756, 33583)
     public fuelCalculator(input: number, expectedOutput: number) {
-        Expect(calculateFuelFromMass(input)).toBe(expectedOutput);
+        Expect(calculateFuelFromMass(input)).toEqual(expectedOutput);
     }
 
     @Test("Check List of Mass to Total Fuel Calculator")
     @TestCase([12, 14, 1969, 100756], 34241) // 2 + 2 + 654 + 33583
     public totalFuelCalculator(input: number[], expectedOutput: number) {
-        Expect(getTotalFuelForMasses(input)).toBe(expectedOutput);
+        Expect(getTotalFuelForMasses(input)).toEqual(expectedOutput);
     }
 
     @Test("Fuel on Fuel Calculator")
@@ -25,12 +25,12 @@ export class Day1Tests {
     @TestCase(100756, 50346)
     @TestCase(34241, 17090)
     public fuelOnFuelCalculator(input: number, expectedOutput: number) {
-        Expect(getFuelOnFuel(input, 0)).toBe(expectedOutput);
+        Expect(getFuelOnFuel(input, 0)).toEqual(expectedOutput);
     }
 
     @Test("Final Total Calculator")
     @TestCase([14, 1969, 100756], 51314) // 2 + 966 + 50346
     public finalTotalFuelCalculator(input: number[], expectedOutput: number) {
-        Expect(getTotalFuelForMassesInclFuelOnFuel(input)).toBe(expectedOutput);
+        Expect(getTotalFuelForMassesInclFuelOnFuel(input)).toEqual(expectedOutput);
     }
 }
