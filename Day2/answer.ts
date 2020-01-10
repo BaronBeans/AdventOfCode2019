@@ -1,8 +1,6 @@
 import input from "./input";
 
-const dataForDay2 = input.split(",").map(x => +x);
-dataForDay2[1] = 12;
-dataForDay2[2] = 2;
+const dataForDay2 = input.split(",").map(Number);
 
 export const getCodes = (input: number[], index: number) => {
     switch (input[index]) {
@@ -34,7 +32,10 @@ export const multiplyCodes = (input: number[], codes: number[]) => {
     return input;
 }
 
-export const interpret = (input: number[]) => {
+export const interpret = (input: number[], noun: number, verb: number) => {
+    input[1] = noun;
+    input[2] = verb;
+
     for (let i = 0, length = ~~(input.length / 4); i < length; i++) {
         const codes = getCodes(input, i * 4);
 
@@ -48,9 +49,23 @@ export const interpret = (input: number[]) => {
         }
     }
 
-    return input;
+    return input[0];
 }
 
-export const getFinalValue = (input: number[]) => input.length > 0 ? input[0] : undefined;
 
-console.log(`Day 2 Part 1: ${getFinalValue(interpret(dataForDay2))}`);
+export const checkForInputs = (input: number[]) => {
+    const reset = input;
+    for (let n = 0; n < 500; n++) {
+        for (let v = 0; v < 500; v++) {
+            let array = reset;
+            if (interpret(array, n, v) === 19690720) {
+                console.log(`Match found - noun: ${n}, verb: ${v}`);
+            }
+        }
+    }
+}
+
+// Part 1:
+console.log(`Day 2 Part 1: ${interpret(dataForDay2, 12, 2)}`); //6627023
+
+// checkForInputs(dataForDay2);
